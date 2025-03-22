@@ -15,7 +15,7 @@ setup(
     zip_safe=True,
     maintainer='divine',
     maintainer_email='dndukac2007@gmail.com',
-    description='TODO: Package description',
+    description='Functionality for JOE: MREN 203',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={

@@ -3,7 +3,7 @@
 <package format="3">
   <name>joe_pkg</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Functionality for JOE: MREN 203</description>
   <maintainer email="dndukac2007@gmail.com">divine</maintainer>
   <license>Apache-2.0</license>
 
