@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+        	'key_twist_publisher = joe_pkg.twist_pub:main'
         ],
     },
 )
