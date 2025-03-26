@@ -14,7 +14,7 @@ class SerialTwistPass(Node):
         )
         self.subscription  # prevent unused variable warning
         self.ser = serial.Serial(
-            "/dev/ttyACM0", 9600, timeout=1
+            "/dev/ttyACM0", 57600, timeout=1
         )  # change serial name to arduino
 
     # define the subscriber callback to receive data, parse it into the desired format, and send it
