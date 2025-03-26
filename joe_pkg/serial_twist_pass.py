@@ -27,7 +27,7 @@ class SerialTwistPass(Node):
         motor_command = lin_speed + ":" + ang_speed + "\n"
 
         # record the received message on the console
-        # self.get_logger().info(motor_command)
+        self.get_logger().info(motor_command)
 
         self.ser.reset_input_buffer()  # flush input buffer, discarding all its contents
         self.ser.write(motor_command.encode("utf-8"))
