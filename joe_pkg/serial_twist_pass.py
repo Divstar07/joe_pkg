@@ -32,8 +32,11 @@ class SerialTwistPass(Node):
 
         self.ser.reset_input_buffer()  # flush input buffer, discarding all its contents
         self.ser.write(motor_command.encode("utf-8"))
-        line = self.ser.readline().decode('utf-8').rstrip()
-        self.get_logger().info(line)
+        
+        # wait for arduino input
+        if self.ser.in_waiting > 0:
+            line = self.ser.readline().decode('utf-8').rstrip()
+            self.get_logger().info(line)
         time.sleep(1)
 
         # send the data to the arduino over serial
