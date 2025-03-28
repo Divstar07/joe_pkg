@@ -47,7 +47,7 @@ class TwistPublisher(Node):
                 global stop_threads
                 if stop_threads:
                     break
-                if select.select([sys.stdin], [], [], 0.1)[0]:
+                if select.select([sys.stdin], [], [], 0.01)[0]:
                     key_pressed = sys.stdin.read(1)
 
                     if key_pressed in self.key_state:
