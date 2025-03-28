@@ -26,7 +26,7 @@ class TwistPublisher(Node):
 
         # define linear and angular speed paramters
         self.declare_parameter("linear_speed", 1.0)
-        self.declare_parameter("angular_speed", 7.0)
+        self.declare_parameter("angular_speed", 8.0)
         self.linear_speed = self.get_parameter("linear_speed").value
         self.angular_speed = self.get_parameter("angular_speed").value
 
