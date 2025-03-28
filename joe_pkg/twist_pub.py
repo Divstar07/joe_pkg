@@ -18,7 +18,7 @@ class TwistPublisher(Node):
     def __init__(self):
         super().__init__("twist_pub")
         self.publisher_ = self.create_publisher(Twist, "desired_twist", 10)
-        timer_period = 0.01  # seconds
+        timer_period = 0.1  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         # create a key_state dictionary
@@ -47,7 +47,7 @@ class TwistPublisher(Node):
                 global stop_threads
                 if stop_threads:
                     break
-                if select.select([sys.stdin], [], [], 0.01)[0]:
+                if select.select([sys.stdin], [], [], 0.1)[0]:
                     key_pressed = sys.stdin.read(1)
 
                     if key_pressed in self.key_state:
