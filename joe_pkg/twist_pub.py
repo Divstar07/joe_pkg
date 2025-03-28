@@ -18,7 +18,7 @@ class TwistPublisher(Node):
     def __init__(self):
         super().__init__("twist_pub")
         self.publisher_ = self.create_publisher(Twist, "desired_twist", 10)
-        timer_period = 0.1  # seconds
+        timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         # create a key_state dictionary
