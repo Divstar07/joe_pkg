@@ -25,8 +25,8 @@ class TwistPublisher(Node):
         self.key_state = {"w": False, "s": False, "a": False, "d": False}
 
         # define linear and angular speed paramters
-        self.declare_parameter("linear_speed", 0.5)
-        self.declare_parameter("angular_speed", 1.0)
+        self.declare_parameter("linear_speed", 0.7)
+        self.declare_parameter("angular_speed", 2.0)
         self.linear_speed = self.get_parameter("linear_speed").value
         self.angular_speed = self.get_parameter("angular_speed").value
 
@@ -78,9 +78,9 @@ class TwistPublisher(Node):
             msg.linear.x = -self.linear_speed
 
         if self.key_state["d"]:
-            msg.angular.z = self.angular_speed
-        elif self.key_state["a"]:
             msg.angular.z = -self.angular_speed
+        elif self.key_state["a"]:
+            msg.angular.z = self.angular_speed
 
         # publish the twist message
         self.publisher_.publish(msg)
